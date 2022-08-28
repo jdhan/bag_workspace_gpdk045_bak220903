@@ -1,0 +1,12 @@
+lib_name: gpdk045_microtemplates_dense
+cell_name: pmos4_fast_left
+rects:
+  1:
+    layer: prBoundary boundary
+    bBox: [[0.000000, 0.000000], [0.205000, 1.000000]]
+  2:
+    layer: Nwell drawing
+    bBox: [[0.000000, 0.000000], [0.205000, 1.000000]]
+labels:
+  {}
+instances: {}
