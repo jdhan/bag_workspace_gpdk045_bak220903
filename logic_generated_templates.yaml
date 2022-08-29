@@ -1,0 +1,10 @@
+logic_generated:
+  inv_24x:
+    bbox:
+    - - 0
+      - 0
+    - - 5330
+      - 2000
+    cellname: inv_24x
+    libname: logic_generated
+    pins: {}

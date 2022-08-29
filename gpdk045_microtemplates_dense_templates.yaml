@@ -63,6 +63,14 @@ gpdk045_microtemplates_dense:
     xy1:
     - 0.205
     - 1.0
+  momcap_center_1x:
+    pins: {}
+    xy0:
+    - 0.0
+    - 0.0
+    xy1:
+    - 3.075
+    - 0.3
   nmos4_fast_boundary:
     pins: {}
     xy0:
@@ -1022,6 +1030,14 @@ gpdk045_microtemplates_dense:
     - 0.0
     - 0.0
   via_M3_M4_0:
+    pins: {}
+    xy0:
+    - 0.0
+    - 0.0
+    xy1:
+    - 0.0
+    - 0.0
+  via_M5_M6_0:
     pins: {}
     xy0:
     - 0.0
