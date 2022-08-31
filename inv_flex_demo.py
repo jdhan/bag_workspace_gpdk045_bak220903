@@ -15,10 +15,11 @@ import laygo2_tech as tech
 # Parameter definitions #############
 # Design Variables
 nf = 8
+w = 360
 
 # Templates
-tpmos_name = 'pmos'
-tnmos_name = 'nmos'
+tpmos_name = 'pmos_flex'
+tnmos_name = 'nmos_flex'
 
 # Grids
 pg_name = 'placement_basic'
@@ -40,7 +41,7 @@ tpmos, tnmos = templates[tpmos_name], templates[tnmos_name]
 # print(templates[tpmos_name], templates[tnmos_name], sep="\n") 
 
 print("Load grids")
-grids = tech.load_grids(templates=templates)
+grids = tech.load_grids(templates=templates, params={'w':w})
 pg, r12, r23, r34 = grids[pg_name], grids[r12_name], grids[r23_name], grids[r34_name]
 ### Uncomment if you want to print grids information.
 # print(grids[pg_name], grids[r12_name], grids[r23_name], grids[r34_name], sep="\n") 
@@ -55,8 +56,8 @@ lib.append(dsn)
       
 # 3. Create instances.
 print("Create instances")
-in0 = tnmos.generate(name='MN0',                 params={'nf': nf, 'tie': 'S'})
-ip0 = tpmos.generate(name='MP0', transform='MX', params={'nf': nf,'tie': 'S'})
+in0 = tnmos.generate(name='MN0',                 params={'w': w, 'nf': nf, 'tie': 'S', 'nfdmyl':2, 'nfdmyr':2})
+ip0 = tpmos.generate(name='MP0', transform='MX', params={'w': w, 'nf': nf, 'tie': 'S', 'nfdmyl':2, 'nfdmyr':2})
       
 # 4. Place instances.
 dsn.place(grid=pg, inst=in0, mn=[0,0])
