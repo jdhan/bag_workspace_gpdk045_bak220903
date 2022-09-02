@@ -1,8 +1,8 @@
 ##########################################################
 #                                                        #
-#                Inverter Layout Generator               #
+#           Inverter_Flexible Layout Generator           #
 #     Contributors: T. Shin, S. Park, Y. Oh, T. Kang     #
-#                 Last Update: 2022-05-27                #
+#                 Last Update: 2022-09-02                #
 #                                                        #
 ##########################################################
 
@@ -14,7 +14,7 @@ import laygo2_tech as tech
 
 # Parameter definitions #############
 # Design Variables
-nf = 8
+nf = 4
 w = 360
 
 # Templates
@@ -56,8 +56,8 @@ lib.append(dsn)
       
 # 3. Create instances.
 print("Create instances")
-in0 = tnmos.generate(name='MN0',                 params={'w': w, 'nf': nf, 'tie': 'S', 'nfdmyl':2, 'nfdmyr':2})
-ip0 = tpmos.generate(name='MP0', transform='MX', params={'w': w, 'nf': nf, 'tie': 'S', 'nfdmyl':2, 'nfdmyr':2})
+in0 = tnmos.generate(name='MN0',                 params={'w': w, 'nf': nf, 'tie': 'S', 'nfdmyl': 2, 'nfdmyr':2})
+ip0 = tpmos.generate(name='MP0', transform='MX', params={'w': w, 'nf': nf, 'tie': 'S', 'nfdmyl': 2, 'nfdmyr':2})
       
 # 4. Place instances.
 dsn.place(grid=pg, inst=in0, mn=[0,0])

@@ -2,7 +2,7 @@
 #                                                        #
 #                Inverter Layout Generator               #
 #     Contributors: T. Shin, S. Park, Y. Oh, T. Kang     #
-#                 Last Update: 2022-05-27                #
+#                 Last Update: 2022-09-02                #
 #                                                        #
 ##########################################################
 
@@ -55,8 +55,9 @@ lib.append(dsn)
       
 # 3. Create instances.
 print("Create instances")
-in0 = tnmos.generate(name='MN0',                 params={'nf': nf, 'tie': 'S', 'nfdmyl':2, 'nfdmyr':2})
-ip0 = tpmos.generate(name='MP0', transform='MX', params={'nf': nf,'tie': 'S', 'nfdmyl':2, 'nfdmyr':2})
+in0 = tnmos.generate(name='MN0',                 params={'nf': nf, 'tie': 'S'})
+ip0 = tpmos.generate(name='MP0', transform='MX', params={'nf': nf,'tie': 'S'})
+
 # 4. Place instances.
 dsn.place(grid=pg, inst=in0, mn=[0,0])
 dsn.place(grid=pg, inst=ip0, mn=pg.mn.top_left(in0) + pg.mn.height_vec(ip0))
